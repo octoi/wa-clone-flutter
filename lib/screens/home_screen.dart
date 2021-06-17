@@ -8,12 +8,12 @@ class HomeScreen extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       child: Column(
         children: [
-          ProfileCard(),
-          ProfileCard(),
-          ProfileCard(),
-          ProfileCard(),
-          ProfileCard(),
-          ProfileCard(),
+          ProfileCard(
+            profile: "https://i.redd.it/ood9idkaxze51.jpg",
+            title: "John Wick",
+            subTitle: "Hey man how are you",
+            time: "16:19",
+          ),
         ],
       ),
     );
