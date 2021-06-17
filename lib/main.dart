@@ -13,7 +13,7 @@ class Whatsapp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
-        initialIndex: 2,
+        initialIndex: 1,
         length: 4,
         child: Scaffold(
           appBar: AppBar(
