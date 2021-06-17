@@ -24,79 +24,74 @@ class ProfileCard extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 0.0),
-        child: Column(
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    CircleAvatar(
-                      radius: 30.0,
-                      backgroundImage: NetworkImage(profile),
-                    ),
-                    SizedBox(width: 20.0),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          title,
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: appPrimaryTextColor,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(height: 5.0),
-                        Text(
-                          subTitle,
-                          style: TextStyle(
-                            color: appSecondaryTextColor,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
+                CircleAvatar(
+                  radius: 30.0,
+                  backgroundImage: NetworkImage(profile),
                 ),
+                SizedBox(width: 20.0),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: hasNewMessage
-                      ? [
-                          Text(
-                            time,
-                            style: TextStyle(
-                              color: appLightGreen,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(8.0),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: appLightGreen,
-                            ),
-                            child: Center(
-                              child: Text(
-                                howManyToRead,
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ]
-                      : [
-                          Text(
-                            time,
-                            style: TextStyle(
-                              color: appSecondaryTextColor,
-                            ),
-                          ),
-                        ],
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: appPrimaryTextColor,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(height: 5.0),
+                    Text(
+                      subTitle,
+                      style: TextStyle(
+                        color: appSecondaryTextColor,
+                      ),
+                    ),
+                  ],
                 )
               ],
             ),
-            Divider(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: hasNewMessage
+                  ? [
+                      Text(
+                        time,
+                        style: TextStyle(
+                          color: appLightGreen,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(8.0),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: appLightGreen,
+                        ),
+                        child: Center(
+                          child: Text(
+                            howManyToRead,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ]
+                  : [
+                      Text(
+                        time,
+                        style: TextStyle(
+                          color: appSecondaryTextColor,
+                        ),
+                      ),
+                    ],
+            )
           ],
         ),
       ),
