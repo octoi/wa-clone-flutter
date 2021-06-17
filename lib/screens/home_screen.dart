@@ -9,6 +9,11 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         children: [
           ProfileCard(),
+          ProfileCard(),
+          ProfileCard(),
+          ProfileCard(),
+          ProfileCard(),
+          ProfileCard(),
         ],
       ),
     );
