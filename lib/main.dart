@@ -10,21 +10,41 @@ class Whatsapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: appDarkGreen,
-          elevation: 0.0,
-          title: Text("WhatsApp"),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {},
+      home: DefaultTabController(
+        initialIndex: 1,
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: appDarkGreen,
+            elevation: 0.0,
+            title: Text("WhatsApp"),
+            actions: [
+              IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.more_vert),
+                onPressed: () {},
+              ),
+            ],
+            bottom: TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.camera_alt)),
+                Tab(icon: Icon(Icons.camera_alt)),
+              ],
             ),
-            IconButton(
-              icon: Icon(Icons.more_vert),
-              onPressed: () {},
-            ),
-          ],
+          ),
+          body: TabBarView(
+            children: [
+              Center(
+                child: Text("Home screen"),
+              ),
+              Center(
+                child: Text("Home screen"),
+              ),
+            ],
+          ),
         ),
       ),
     );
