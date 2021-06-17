@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wa_clone/screens/dummy_screen.dart';
+import 'package:wa_clone/screens/home_screen.dart';
 import 'package:wa_clone/utils/constants.dart';
 
 void main() {
@@ -11,8 +13,8 @@ class Whatsapp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
-        initialIndex: 1,
-        length: 2,
+        initialIndex: 2,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: appDarkGreen,
@@ -29,20 +31,21 @@ class Whatsapp extends StatelessWidget {
               ),
             ],
             bottom: TabBar(
+              physics: BouncingScrollPhysics(),
               tabs: [
                 Tab(icon: Icon(Icons.camera_alt)),
-                Tab(icon: Icon(Icons.camera_alt)),
+                Tab(text: "CHATS"),
+                Tab(text: "STATUS"),
+                Tab(text: "CALLS"),
               ],
             ),
           ),
           body: TabBarView(
             children: [
-              Center(
-                child: Text("Home screen"),
-              ),
-              Center(
-                child: Text("Home screen"),
-              ),
+              DummyScreen(title: "CAMERA"),
+              HomeScreen(),
+              DummyScreen(title: "STATUS"),
+              DummyScreen(title: "CALLS"),
             ],
           ),
         ),
