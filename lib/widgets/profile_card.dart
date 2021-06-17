@@ -15,7 +15,7 @@ class ProfileCard extends StatelessWidget {
     required this.title,
     required this.subTitle,
     required this.time,
-    this.hasNewMessage,
+    this.hasNewMessage = false,
     this.howManyToRead,
   }) : super(key: key);
 
@@ -60,34 +60,37 @@ class ProfileCard extends StatelessWidget {
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  // Text(
-                  //   "YESTERDAY",
-                  //   style: TextStyle(
-                  //     color: appLightGreen,
-                  //     fontWeight: FontWeight.w600,
-                  //   ),
-                  // ),
-                  // Container(
-                  //   padding: EdgeInsets.all(8.0),
-                  //   decoration: BoxDecoration(
-                  //     shape: BoxShape.circle,
-                  //     color: appLightGreen,
-                  //   ),
-                  //   child: Center(
-                  //     child: Text(
-                  //       "2",
-                  //       style: TextStyle(color: Colors.white),
-                  //     ),
-                  //   ),
-                  // ),
-                  Text(
-                    time,
-                    style: TextStyle(
-                      color: appSecondaryTextColor,
-                    ),
-                  ),
-                ],
+                children: hasNewMessage
+                    ? [
+                        Text(
+                          time,
+                          style: TextStyle(
+                            color: appLightGreen,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: appLightGreen,
+                          ),
+                          child: Center(
+                            child: Text(
+                              howManyToRead,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ]
+                    : [
+                        Text(
+                          time,
+                          style: TextStyle(
+                            color: appSecondaryTextColor,
+                          ),
+                        ),
+                      ],
               )
             ],
           ),
