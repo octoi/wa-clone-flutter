@@ -2,10 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:wa_clone/utils/constants.dart';
 
 class ProfileCard extends StatelessWidget {
+  final String profile;
+  final String title;
+  final String subTitle;
+  final String time;
+  final hasNewMessage;
+  final howManyToRead;
+
+  const ProfileCard({
+    Key? key,
+    required this.profile,
+    required this.title,
+    required this.subTitle,
+    required this.time,
+    this.hasNewMessage,
+    this.howManyToRead,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(15.0),
       child: Column(
         children: [
           Row(
@@ -16,16 +33,14 @@ class ProfileCard extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 30.0,
-                    backgroundImage: NetworkImage(
-                      'https://cdn.pixabay.com/photo/2013/05/11/08/28/sunset-110305_960_720.jpg',
-                    ),
+                    backgroundImage: NetworkImage(profile),
                   ),
                   SizedBox(width: 20.0),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "John Wick",
+                        title,
                         style: TextStyle(
                           fontSize: 18.0,
                           color: appPrimaryTextColor,
@@ -34,7 +49,7 @@ class ProfileCard extends StatelessWidget {
                       ),
                       SizedBox(height: 5.0),
                       Text(
-                        "How are you man",
+                        subTitle,
                         style: TextStyle(
                           color: appSecondaryTextColor,
                         ),
@@ -43,12 +58,37 @@ class ProfileCard extends StatelessWidget {
                   )
                 ],
               ),
-              Text(
-                "19:14",
-                style: TextStyle(
-                  color: appSecondaryTextColor,
-                ),
-              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  // Text(
+                  //   "YESTERDAY",
+                  //   style: TextStyle(
+                  //     color: appLightGreen,
+                  //     fontWeight: FontWeight.w600,
+                  //   ),
+                  // ),
+                  // Container(
+                  //   padding: EdgeInsets.all(8.0),
+                  //   decoration: BoxDecoration(
+                  //     shape: BoxShape.circle,
+                  //     color: appLightGreen,
+                  //   ),
+                  //   child: Center(
+                  //     child: Text(
+                  //       "2",
+                  //       style: TextStyle(color: Colors.white),
+                  //     ),
+                  //   ),
+                  // ),
+                  Text(
+                    time,
+                    style: TextStyle(
+                      color: appSecondaryTextColor,
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
           Divider(),
