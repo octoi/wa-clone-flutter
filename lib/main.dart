@@ -32,6 +32,7 @@ class Whatsapp extends StatelessWidget {
             ],
             bottom: TabBar(
               physics: BouncingScrollPhysics(),
+              indicatorColor: Colors.white,
               tabs: [
                 Tab(icon: Icon(Icons.camera_alt)),
                 Tab(text: "CHATS"),
