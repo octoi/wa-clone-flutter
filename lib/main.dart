@@ -49,6 +49,11 @@ class Whatsapp extends StatelessWidget {
               DummyScreen(title: "CALLS"),
             ],
           ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+            child: Icon(Icons.chat),
+            backgroundColor: appLightGreen,
+          ),
         ),
       ),
     );
