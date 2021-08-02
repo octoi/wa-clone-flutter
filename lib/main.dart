@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wa_clone/screens/dummy_screen.dart';
 import 'package:wa_clone/screens/home_screen.dart';
+import 'package:wa_clone/screens/status_screen.dart';
 import 'package:wa_clone/utils/constants.dart';
 
 void main() {
@@ -8,6 +9,8 @@ void main() {
 }
 
 class Whatsapp extends StatelessWidget {
+  const Whatsapp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -45,7 +48,7 @@ class Whatsapp extends StatelessWidget {
             children: [
               DummyScreen(title: "CAMERA"),
               HomeScreen(),
-              DummyScreen(title: "STATUS"),
+              StatusScreen(),
               DummyScreen(title: "CALLS"),
             ],
           ),
