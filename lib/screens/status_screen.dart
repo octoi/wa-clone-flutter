@@ -13,8 +13,8 @@ class StatusScreen extends StatelessWidget {
         children: [
           StatusCard(
             profile: currentUser.profile,
-            title: currentUser.title,
-            time: currentUser.time,
+            title: 'My Status',
+            time: '52 minutes ago',
             isMine: true,
           )
         ],
