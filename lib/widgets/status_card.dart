@@ -23,7 +23,20 @@ class StatusCard extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [],
+          children: [
+            CircleAvatar(
+              backgroundColor: appSecondaryTextColor,
+              radius: 30.0,
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: CircleAvatar(
+                  radius: 30.0,
+                  backgroundColor: appSecondaryTextColor,
+                  backgroundImage: NetworkImage(profile),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
