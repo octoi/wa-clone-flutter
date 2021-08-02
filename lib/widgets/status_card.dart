@@ -6,12 +6,14 @@ class StatusCard extends StatelessWidget {
   final String title;
   final String time;
   final bool isMine;
+  final bool isSeen;
 
   StatusCard({
     required this.profile,
     required this.title,
     required this.time,
     this.isMine = false,
+    this.isSeen = false,
   });
 
   @override
@@ -25,10 +27,10 @@ class StatusCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CircleAvatar(
-              backgroundColor: appSecondaryTextColor,
+              backgroundColor: isSeen ? appLightGreen : appSecondaryTextColor,
               radius: 30.0,
               child: Padding(
-                padding: const EdgeInsets.all(4.0),
+                padding: const EdgeInsets.all(3.0),
                 child: CircleAvatar(
                   radius: 30.0,
                   backgroundColor: appSecondaryTextColor,
