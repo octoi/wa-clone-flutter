@@ -63,7 +63,14 @@ class StatusCard extends StatelessWidget {
                   ],
                 )
               ],
-            )
+            ),
+            isMine
+                ? IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.more_horiz),
+                    color: appSecondaryTextColor,
+                  )
+                : SizedBox.shrink(),
           ],
         ),
       ),
